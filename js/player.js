@@ -14,6 +14,16 @@ class Player{
             playerCount: count
         })
     }
+    getRank(){
+        database.ref("playerRank").on("value", function(data){
+            playerRank = data.val();
+        })
+    }
+    updateRank(rank){
+        database.ref('/').update({
+            playerRank: rank
+        })
+    }
     update(){
         var playerIndex = "players/player" + this.index
         database.ref(playerIndex).set({

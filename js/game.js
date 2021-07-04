@@ -37,6 +37,7 @@ class Game{
     play(){
         form.hide();
         Player.getPlayerInfo();
+        player.getRank();
         if(allPlayers != undefined){
             background(groundImage);
             image(trackImage, 0, -displayHeight*4, displayWidth, displayHeight*5)
@@ -63,12 +64,14 @@ class Game{
             player.distance += 50
             player.update();
         }
-        if(player.distance > 4000){
+        if(player.distance > 9000){
             gameState = 2;
+            playerRank = playerRank + 1;
+            player.updateRank(playerRank);
+            console.log(playerRank);
         }
         drawSprites();
     }
     end(){
-        console.log("game_ended");
     }
 }

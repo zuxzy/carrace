@@ -1,6 +1,7 @@
 var database;
 var gameState = 0;
 var playerCount = 0;
+var playerRank = 0;
 var game, player, form;
 var allPlayers;
 var car1, car2, car3, car4;
